@@ -1,23 +1,54 @@
+@font-face {
+    font-family: "TitleFont";
+    src: url("./fonts/Magic\ Retro.ttf");
+}
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: black;
 }
 .section{
-    margin-top: 100px;
+    margin-top: 40px;
+    color: white;
 }
 .subheading{
     font-size: 35px;
+    font-family: "TitleFont", sans-serif;
+    margin-top: 20px;
 }
 .heading{
     font-size: 85px;
-    margin-top: -10px;
+    margin-top: 0px;
+    font-family: "TitleFont", sans-serif;
 }
 #start-btn{
     width: 180px;
     height: 40px;
     background-color: transparent;
-    border: 2px solid black;
+    border: 2px solid white;
     font-size: 20px;
+    margin-top: -30px;
+    border-radius: 8px;
+    font-family: "TitleFont", sans-serif;
+    box-shadow: 4px 3px 0 white;
+    cursor: pointer;
+    color: white;
+
+}
+#start-btn:hover{
+    transform: scale(103%);
+    transition: 0.7s ease;
+}
+#start-btn:active{
+    box-shadow: 2px 1px 0 white;
+}
+footer{
+    margin-top: 100px;
+    font-size: 15px;
+    font-family: "TitleFont", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    color: white;
 }
