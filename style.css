@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section{
+    margin-top: 100px;
+}
+.subheading{
+    font-size: 35px;
+}
+.heading{
+    font-size: 85px;
+    margin-top: -10px;
+}
+#start-btn{
+    width: 180px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid black;
+    font-size: 20px;
+}
