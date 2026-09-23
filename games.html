@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <style>
+        @font-face {
+            font-family: "TitleFont";
+            src: url("./fonts/Rhodesia.ttf");
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .head-text{
+            font-family: "TitleFont", sans-serif;
+            font-size: 55px;
+            margin-top: 45px;
+            font-style: italic;
+        }
+        .games-section{
+            width: 85%;
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .game-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 180px;
+            height: 190px;
+            background-color: rgb(17, 17, 17);
+            color: white;
+            font-size: 25px;
+            font-family: "TitleFont", sans-serif;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="head-text">- Games -</h1>
+    <div class="games-section">
+
+        <div class="game-box" id="first-game-box">
+            <span>Tic Tac Toe</span>
+        </div>
+
+        <div class="game-box">
+            <img src="#">
+            <span>game name</span>
+        </div>
+
+        <div class="game-box">
+            <img src="#">
+            <span>game name</span>
+        </div>
+    </div>
+    <script>
+        let firstGameBox = document.getElementById("first-game-box");
+
+        firstGameBox.addEventListener("click", function(){
+            location.href = "tic-tac-toe.html";
+        })
+    </script>
+</body>
+</html>

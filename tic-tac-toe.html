@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe game</title>
+    <style>
+        @font-face {
+            font-family: "TitleFont";
+            src: url("./fonts/Rhodesia.ttf");
+        }
+        body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;  
+          background-color: black;
+          color: white;
+        }
+        h1{
+            font-size: 45px;
+            font-family: "TitleFont", sans-serif;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        .game-container{
+            display: grid;
+            width: fit-content;
+            height: fit-content;
+            border: 5px solid white;
+            grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+            margin-top: 0px;
+        }
+        .slot{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 85px;
+            height: 85px;
+            border: 5px solid white;
+            font-size: 40px;
+            font-family: "TitleFont", sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        #game-message{
+            font-family: "TitleFont", sans-serif;
+            font-size: 20px;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body>
+    <h1> - Tic Tac Toe - </h1>
+    <span id="game-message"></span>
+    <br>
+    <div class="game-container">
+        <div class="slot" id="slot1"></div>
+        <div class="slot" id="slot2"></div>
+        <div class="slot" id="slot3"></div>
+        <div class="slot" id="slot4"></div>
+        <div class="slot" id="slot5"></div>
+        <div class="slot" id="slot6"></div>
+        <div class="slot" id="slot7"></div>
+        <div class="slot" id="slot8"></div>
+        <div class="slot" id="slot9"></div>
+    </div>
+    <script>
+        let player = "X";
+        let gameMessage = document.getElementById("game-message");
+        function winner(){
+            let square = [];
+            for(i = 1; i < 10; i++){
+                let element = document.getElementById(`slot${i}`);
+                square[i] = element ? element.innerText : "";
+                
+            }
+            if(square[1] == square[2] && square[2] == square[3] && square[1] != ""){
+                    if(player === "X"){
+                        console.log("player O wins")
+                    }else if(player === "O"){
+                        console.log("player X wins")
+                    }
+
+
+                }else if(square[4] == square[5] && square[5] == square[6] && square[4] != ""){
+                    if(player === "X"){
+                        console.log("player O wins")
+                    }else if(player === "O"){
+                        console.log("player X wins")
+                    }
+
+
+                }else if(square[7] == square[8] && square[8] == square[9] && square[7] != ""){
+                    if(player === "X"){
+                        console.log("player O wins")
+                    }else if(player === "O"){
+                        console.log("player X wins")
+                    }
+                }
+                else if(square[1] == square[4] && square[7] == square[9] && square[7] != ""){
+                    if(player === "X"){
+                        console.log("player O wins")
+                    }else if(player === "O"){
+                        console.log("player X wins")
+                    }
+                }
+                else if(square[7] == square[8] && square[8] == square[9] && square[7] != ""){
+                    if(player === "X"){
+                        console.log("player O wins")
+                    }else if(player === "O"){
+                        console.log("player X wins")
+                    }
+                }
+                else if(square[7] == square[8] && square[8] == square[9] && square[7] != ""){
+                    if(player === "X"){
+                        console.log("player O wins")
+                    }else if(player === "O"){
+                        console.log("player X wins")
+                    }
+                }
+        }
+        window.onload = function(){
+            
+            let gameSlots = document.getElementsByClassName("slot");
+            for(let slot of gameSlots){
+                slot.addEventListener("click", function(){
+                    if(this.innerText.trim() === ""){
+                        this.innerHTML = player;
+                    
+                    if(player === "X"){
+                        player = "O";
+                        gameMessage.innerHTML = "player O's turn";
+                         winner();
+
+                    }else if(player === "O"){
+                        player = "X";
+                        gameMessage.innerHTML = "player X's turn";
+                         winner();
+                    }
+                }
+
+            });
+            }
+        }
+    </script>
+</body>
+</html>
