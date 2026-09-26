@@ -65,22 +65,24 @@
             <span>Tic Tac Toe</span>
         </div>
 
-        <div class="game-box">
-            <img src="#">
-            <span>game name</span>
+        <div class="game-box"  id="second-game-box">
+            <span>Dino Game</span>
         </div>
 
         <div class="game-box">
-            <img src="#">
             <span>game name</span>
         </div>
     </div>
     <script>
         let firstGameBox = document.getElementById("first-game-box");
+        let secondGameBox = document.getElementById("second-game-box");
 
         firstGameBox.addEventListener("click", function(){
             location.href = "tic-tac-toe.html";
-        })
+        });
+        secondGameBox.addEventListener("click", function(){
+            location.href = "dino.html";
+        });
     </script>
 </body>
 </html>

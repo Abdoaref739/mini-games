@@ -16,15 +16,16 @@
             background-color: black;
         }
         #game{
-            width: 500px;
-            height: 200px;
+            width: 650px;
+            height: 300px;
             border: 1px solid white;
+            margin-top: 100px;
+            overflow: hidden;
         }
         #character{
             width: 20px;
             height: 50px;
-            background-color: white;
-            top: 150px;
+            top: 240px;
             position: relative;
         }
         #character > img{
@@ -32,23 +33,27 @@
             height: auto;
         }
         .jump{
-            animation: jump 1s linear;
+            animation: jump 3s linear;
+            transition: 0.7s ease;
         }
         #block{
             width: 30px;
             height: 30px;
-            background-color: gray;
-            top: 120px;
-            left: 460px;
+            top: 190px;
+            left: 1200px;
             position: relative;
-            animation: object-slide 1s infinite linear;
+            animation: object-slide 2s infinite linear;
+        }
+        #cactus-img{
+            width: 30px;
+            height: auto;
         }
         @keyframes object-slide {
             0%{
-                left: 460px;
+                left: 800px;
             }
             100%{
-                left: -40px;
+                left: -60px;
             }
         }
         @keyframes jump {
@@ -56,10 +61,10 @@
                 top: 150px;
             }
             30%{
-                top: 100px;
+                top: 120px;
             }
             70%{
-                top: 100px;
+                top: 120px;
             }
             100%{
                 top: 150px;
@@ -70,13 +75,19 @@
 <body>
     <div id="game">
         <div id="character">
-            <img src="./Assets/Dino/DinoRun1.png" id="character-img">
+            <img src="./Assets/Dino/DinoJump.png" id="character-img">
         </div>
-        <div id="block"></div>
+        <div id="block">
+            <img src="./Assets/Cactus/LargeCactus1.png" id="cactus-img">
+        </div>
     </div>
     <script>
         let character = document.getElementById("character");
         let block = document.getElementById("block");
+        let characterImg = document.getElementById("character-img");
+        let cactusImg = document.getElementById("cactus-img");
+        let imgOrder = 1;
+        let cactusImgOrder = 0;
 
         function jump(){
             character.classList.add("jump");
@@ -91,21 +102,33 @@
         let checkHit = setInterval(function(){
             let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
             let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-
-            if(blockLeft < 20 && blockLeft > 0 && characterTop >= 130){
+            console.log(characterTop)
+            if(blockLeft < 20 && blockLeft > 0 && characterTop >= 150){
                 alert()
             }
         }, 10);
 
         let characterImageChange = setInterval(function(){
-            let characterImg = document.getElementById("character-img");
-            
-            if(characterImg.src === "./Assets/Dino/DinoRun1.png"){
+
+            if(imgOrder === 1){
                 characterImg.src = "./Assets/Dino/DinoRun2.png";
-            }else{
+                imgOrder = 2;
+            }else if(imgOrder === 2){
                 characterImg.src = "./Assets/Dino/DinoRun1.png";
+                imgOrder = 1;
             }
-        }, 200);
+        }, 100);
+
+        let cactusImgChange = setInterval(function(){
+
+            if(cactusImg === 0){
+                cactusImg.src = "./Assets/Dino/DinoRun2.png";
+                cactusImgOrder = 2;
+            }else if(imgOrder === 2){
+                characterImg.src = "./Assets/Dino/DinoRun1.png";
+                imgOrder = 1;
+            }
+        }, 100);
     </script>
 </body>
 </html>
