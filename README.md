@@ -1,5 +1,8 @@
 # Mini Games website
-## How it works: It is a website that u can play mini games in it (how simple!)
+## How it works
+It is a website that u can play mini games in it (how simple!)
+## Website games
+tic tac toe / dino games
 ## Tech stack used: 
 1. HTML
 2. CSS
@@ -13,4 +16,4 @@
 <img width="1365" height="690" alt="image" src="https://github.com/user-attachments/assets/912f50eb-36a4-4d02-9e51-49c1ad98af43" />
 
 
-### MAde with <3 by @Aref
+### Made with <3 by @Aref
